@@ -11,7 +11,8 @@ INSERT INTO BankAccounts VALUES (202, 2, 15000);
 INSERT INTO BankAccounts VALUES (203, 3, 10000);
 COMMIT;
 
-CREATE PROCEDURE TransferFunds(from_acc IN NUMBER, to_acc IN NUMBER, amount IN NUMBER) AS balance NUMBER;
+CREATE PROCEDURE TransferFunds(from_acc IN NUMBER, to_acc IN NUMBER, amount IN NUMBER) AS
+balance NUMBER;
 BEGIN
   SELECT Balance INTO balance
   FROM BankAccounts

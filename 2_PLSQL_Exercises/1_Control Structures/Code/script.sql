@@ -1,11 +1,11 @@
 SET SERVEROUTPUT ON;
 
 CREATE Table Customers (
-    CustomerID Integer Primary Key,
+    CustomerID Number Primary Key,
     Name VarChar2(50),
-    Age Integer,
-    LoanInterestRate Integer,
-    Balance Integer,
+    Age Number,
+    LoanInterestRate Number,
+    Balance Number,
     IsVIP Boolean
 );
 
@@ -59,9 +59,9 @@ END;
 SELECT * FROM customers;
 
 CREATE Table Loans(
-    LoanID Integer Primary Key,
-    CustomerID Integer References Customers(CustomerID),
-    AmountDue Integer,
+    LoanID Number Primary Key,
+    CustomerID Number References Customers(CustomerID),
+    AmountDue Number,
     DueDate Date
 );
 
