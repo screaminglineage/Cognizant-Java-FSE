@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import CurrencyConvertor from './components/CurrencyConvertor';
 
 function App() {
+  const [count, setCount] = useState(1);
+
+  const increment = () => {
+    setCount(count + 1);
+    sayHello();
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  const sayHello = () => {
+    alert("Hello!");
+  };
+
+  const sayWelcome = (message) => {
+    alert(`Welcome ${message}!`);
+  };
+
+  const handleClick = (e) => {
+    alert("I was clicked!");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>{count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <br /><br />
+      <button onClick={() => sayWelcome("Member")}>Say welcome</button>
+      <br /><br />
+      <button onClick={handleClick}>Click on me</button>
+
+      <CurrencyConvertor />
     </div>
   );
 }
 
 export default App;
+
+
